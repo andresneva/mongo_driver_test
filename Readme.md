@@ -14,20 +14,13 @@ Once the server is up, you can start the test by sending a POST method to the /a
 The /api/v1/stages/ will receive a POST call and will evaluate the payload sent in the body to prepare the test and run it, the payload is divided in 2 sections, each with its own parameters, they are:
 
 ### db_config
-####   db_name: 
-The name of the MongoDB database
-####   collection_name: 
-The name of the collection
-####   conn_string: 
-The full connection string to the MongoDB database 
-####   min_pool_size: 
-The minimum connection pool size
-####   max_pool_size: 
-The maximum connection pool size
-####   idle_timeout: 
-The idle timeout 
-####   socket_timeout: 
-The socket timeout
+*   *db_name:* The name of the MongoDB database
+*   *collection_name:* The name of the collection
+*   *conn_string:* The full connection string to the MongoDB database 
+*   *min_pool_size:* The minimum connection pool size
+*   *max_pool_size:* The maximum connection pool size
+*   *idle_timeout:* The idle timeout 
+*   *socket_timeout:* The socket timeout
 
 ### stage_config:
 ####   workers_count: 

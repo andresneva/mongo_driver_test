@@ -4,8 +4,8 @@ This is a project to test the behavior of the golang MongoDB driver under high l
 ## How to run
 In order to run the project all you need to do is run the main.go file, it will start a gin server listening on port 8090, it serves 2 paths with 2 different methods:
 
-GET    /api/v1/health
-POST   /api/v1/stages/
+* **GET**    */api/v1/health*
+* **POST**   */api/v1/stages/*
 
 Once the server is up, you can start the test by sending a POST method to the /api/v1/stages/ URI, with the test payload in the body of the request (see the payload section)
 

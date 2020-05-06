@@ -220,29 +220,9 @@ func (c *consumer) start() {
 	}
 }
 
-//String size of 1 KB to fill the document
-const loremp = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. " +
-	"Praesent in lacinia magna. Aenean vitae maximus sem. " +
-	"Quisque pharetra augue et mollis sollicitudin. " +
-	"Mauris vehicula eros lorem. Donec non sodales neque. " +
-	"Nullam malesuada ligula vel enim mattis tincidunt. " +
-	"Praesent non ornare nunc, at vehicula leo. " +
-	"Aenean et placerat orci. Nullam faucibus sodales diam vel volutpat. " +
-	"Nulla tempor quis quam in ullamcorper." +
-	"Lorem ipsum dolor sit amet, consectetur adipiscing elit. " +
-	"Praesent in lacinia magna. Aenean vitae maximus sem. " +
-	"Quisque pharetra augue et mollis sollicitudin. " +
-	"Mauris vehicula eros lorem. Donec non sodales neque. " +
-	"Nullam malesuada ligula vel enim mattis tincidunt. " +
-	"Praesent non ornare nunc, at vehicula leo. " +
-	"Aenean et placerat orci. Nullam faucibus sodales diam vel volutpat. " +
-	"Nulla tempor quis quam in ullamcorper." +
-	"Lorem ipsum dolor sit amet, consectetur adipiscing elit. " +
-	"Praesent in lacinia magna. Aenean vitae maximus sem. " +
-	"Quisque pharetra augue et mollis sollicitudin. " +
-	"Mauris vehicula eros lorem. Donec non sodales. "
-
 func ensureData(repository repositories.TestRepository, collectionSize int, documentSize int) ([]string, error) {
+
+	logrus.Info("Creating data for the test...")
 
 	count, err := repository.Count()
 	if err != nil {
@@ -263,11 +243,6 @@ func ensureData(repository repositories.TestRepository, collectionSize int, docu
 		var content string
 
 		content = GenerateString(documentSize)
-		/*
-			for y := 0; y < documentSize; y++ {
-				content = content + loremp
-			}
-		*/
 
 		//objectSize := len(storeID) + len(name) + len(content)
 
@@ -279,8 +254,12 @@ func ensureData(repository repositories.TestRepository, collectionSize int, docu
 			HugeValue: content,
 		})
 
-		logrus.Infof("Added document %d of %d", i, collectionSize)
+		logrus.Infof("Creating document %d of %d", i+1, collectionSize)
 	}
+	logrus.Infof("%d Documents created.", collectionSize)
+	logrus.Infof("Inserting data into the database...")
 	err = repository.Insert(data)
+	logrus.Infof("Data inserted.")
+
 	return storeIds, err
 }

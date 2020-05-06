@@ -1,4 +1,4 @@
-module bitbucket.org/rappinc/mongo_driver_test
+module github.com/andresneva/mongo_driver_test
 
 go 1.13
 

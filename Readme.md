@@ -36,6 +36,7 @@ The /api/v1/stages/ will receive a POST call and will evaluate the payload sent 
 
 ## Example payload
 
+```json
 {
 	"db_config":{
 		"db_name":"stores",
@@ -60,6 +61,7 @@ The /api/v1/stages/ will receive a POST call and will evaluate the payload sent 
 		"document_size_kb": 1
 	}
 }
+```
 
 In this example, the test will connect to a local mongoDB instance using the user "test" with password "test" and the "stores" database.
 

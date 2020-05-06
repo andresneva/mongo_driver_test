@@ -14,35 +14,25 @@ Once the server is up, you can start the test by sending a POST method to the /a
 The /api/v1/stages/ will receive a POST call and will evaluate the payload sent in the body to prepare the test and run it, the payload is divided in 2 sections, each with its own parameters, they are:
 
 ### db_config
-*   *db_name:* The name of the MongoDB database
-*   *collection_name:* The name of the collection
-*   *conn_string:* The full connection string to the MongoDB database 
-*   *min_pool_size:* The minimum connection pool size
-*   *max_pool_size:* The maximum connection pool size
-*   *idle_timeout:* The idle timeout 
-*   *socket_timeout:* The socket timeout
+*   **db_name:** The name of the MongoDB database
+*   **collection_name:** The name of the collection
+*   **conn_string:** The full connection string to the MongoDB database 
+*   **min_pool_size:** The minimum connection pool size
+*   **max_pool_size:** The maximum connection pool size
+*   **idle_timeout:** The idle timeout 
+*   **socket_timeout:** The socket timeout
 
 ### stage_config:
-####   workers_count: 
-The number of initial workers for the test
-####   workers_to_add: 
-The number of workers to add at each step of the test
-####   increment_load: 
-The number of times(steps) the test will increment the load####   producers_count: The number of producers at each step of the test
-####   msg_by_sec: 
-The number pf messages per sec to be sent
-####   time_to_sleep_secs: 
-The time elapsed between each step of the test
-####   time_to_finish_secs: 
-The time to wait at the end of test before finishing
-####   query_timeout_ms: 
-The timeout parameter passed to each query on the Find() method
-####   batch_size: 
-The batch size parameter passed to each query on the Find() method, 0 for no batch size (it will use the default)
-####   collection_size: 
-The number of objects to be created in the database for the test
-####   document_size_kb: 
-The size in Kb of each object to be created in the database for the test (this is aproximate)
+*   **workers_count:** The number of initial workers for the test
+*   **workers_to_add:** The number of workers to add at each step of the test
+*   **increment_load:** The number of times(steps) the test will increment the load####   producers_count: The number of producers at each step of the test
+*   **msg_by_sec:** The number pf messages per sec to be sent
+*   **time_to_sleep_secs:** The time elapsed between each step of the test
+*   **time_to_finish_secs:** The time to wait at the end of test before finishing
+*   **query_timeout_ms:** The timeout parameter passed to each query on the Find() method
+*   **batch_size:** The batch size parameter passed to each query on the Find() method, 0 for no batch size (it will use the default)
+*   **collection_size:** The number of objects to be created in the database for the test
+*   **document_size_kb:** The size in Kb of each object to be created in the database for the test (this is aproximate)
 
 ## Example payload
 

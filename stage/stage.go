@@ -9,8 +9,8 @@ import (
 
 	"github.com/sirupsen/logrus"
 
-	"bitbucket.org/rappinc/mongo_driver_test/repositories"
-	"bitbucket.org/rappinc/mongo_driver_test/stats"
+	"github.com/andresneva/mongo_driver_test/repositories"
+	"github.com/andresneva/mongo_driver_test/stats"
 )
 
 var timeouts int64
